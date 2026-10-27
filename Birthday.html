@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Happy Birthday ACMDeGreat</title>
+<style>
+:root{--gold:#f6c65b;--gold2:#fff0b0;--ink:#080808;--panel:#111114;--muted:#c9c2b2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#30200b 0,#111 38%,#050505 100%);color:#fff;font-family:system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#f6c65b 1px,transparent 1px);background-size:39px 39px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}
+.wrap{width:min(100% - 28px,920px);margin:auto;position:relative}
+header{padding:25px 0 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #8b672c}
+.brand{letter-spacing:.12em;font-size:.75rem;color:var(--gold);font-weight:800}
+.brand small{display:block;color:#fff;letter-spacing:.17em;font-size:.68rem;margin-top:4px}
+.pill{border:1px solid #7e6028;border-radius:99px;padding:8px 12px;color:var(--gold2);font-size:.75rem}
+.hero{text-align:center;padding:48px 0 24px}
+.crown{font-size:2.4rem;color:var(--gold);text-shadow:0 0 25px #ffca52;animation:float 3s ease-in-out infinite}
+.eyebrow{color:var(--gold);letter-spacing:.22em;font-size:.72rem;font-weight:800;margin:12px 0}
+h1{font-size:clamp(2.6rem,10vw,5.6rem);line-height:.98;letter-spacing:-.055em;margin:12px 0;background:linear-gradient(110deg,#fff7cf,#f2bd4b 40%,#fff1a6 65%,#b87919);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{font-size:clamp(1rem,3vw,1.25rem);color:#eee0bd;margin:18px 0 25px}
+.name{font-weight:800;letter-spacing:.14em;font-size:.95rem}
+.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+button{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--gold);background:linear-gradient(135deg,#ffdc83,#bc801c);color:#171006;font-weight:800;border-radius:12px;padding:13px 18px;box-shadow:0 0 22px #e7ad3a26}
+.btn.secondary{background:#121212;color:var(--gold2);box-shadow:none}
+.scene{position:relative;max-width:620px;margin:18px auto 32px;padding:25px 18px 30px;text-align:center;border:1px solid #9a702c;border-radius:24px;background:linear-gradient(145deg,#171310eF,#080808f5);box-shadow:0 18px 70px #000,0 0 35px #f3bd4a12;overflow:hidden}
+.scene:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,#fff2b00b 45%,transparent 70%);transform:translateX(-100%);animation:shine 6s infinite}
+.balloons{font-size:clamp(2rem,8vw,3.4rem);letter-spacing:.08em;position:relative}
+.cake{font-size:clamp(5rem,20vw,8rem);filter:drop-shadow(0 0 20px #ffc54b55);animation:float 3.5s ease-in-out infinite;line-height:1.3}
+.cake-caption{font-family:Georgia,serif;font-style:italic;color:var(--gold2);font-size:1.35rem}
+.card{padding:22px;border-radius:18px;border:1px solid #5e4825;background:#0c0c0ef2;margin:25px 0;text-align:left;line-height:1.75;color:#e9e5db}
+.card h2,.section-title{color:var(--gold);font-family:Georgia,serif}
+.card h2{margin-top:0}
+.gold{color:var(--gold2);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.tile{border:1px solid #4f3d20;background:linear-gradient(145deg,#161412,#090909);border-radius:16px;padding:17px 14px;min-height:120px}
+.tile .emoji{font-size:1.7rem}
+.tile h3{font-size:.96rem;color:var(--gold2);margin:8px 0 5px}
+.tile p{font-size:.83rem;color:var(--muted);margin:0;line-height:1.5}
+section.content{padding:24px 0}
+.section-title{text-align:center;font-size:1.8rem;margin:4px 0 8px}
+.center{text-align:center;color:var(--muted);line-height:1.7}
+.promise{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #332a1b}
+.promise:last-child{border:0}
+.check{color:var(--gold);font-weight:900}
+.hidden{display:none!important}
+#giftReveal{animation:appear .8s ease both}
+footer{text-align:center;padding:28px 0 42px;color:#b8a77f;font-size:.83rem}
+footer strong{color:var(--gold)}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:10}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes shine{0%,65%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes appear{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hero{padding-top:65px}.scene{padding:35px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+<header>
+  <div class="brand">ACMDeGreat <small>AMILO CHIEMERIE MESHACK</small></div>
+  <div class="pill">✦ BIRTHDAY EDITION 2026</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="crown">♛</div>
+    <div class="eyebrow">A NEW CHAPTER BEGINS</div>
+    <h1>HAPPY<br>BIRTHDAY<br>TO ME.</h1>
+    <p class="subtitle">Another year. A bigger vision.</p>
+    <div class="name">AMILO CHIEMERIE MES HACK</div>
+    <p class="gold">Known to the world as ACMDeGreat</p>
+    <div class="hero-actions">
+      <button class="btn" id="celebrateBtn">✨ Celebrate my day</button>
+      <button class="btn secondary" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Read my letter ↓</button>
+    </div>
+  </section>
+
+  <div class="scene">
+    <div class="balloons" aria-label="Birthday balloons">🎈 ✨ 🎈</div>
+    <div class="cake" aria-label="Birthday cake">🎂</div>
+    <div class="cake-caption">Made with purpose. Built for impact.</div>
+    <p class="center">This moment belongs to me — my story, my growth, my next chapter.</p>
+  </div>
+
+  <section class="content">
+    <h2 class="section-title">A message to myself</h2>
+    <div class="card" id="letter">
+      <h2>Dear Amilo,</h2>
+      <p>Happy birthday to you — the person behind the dream, the name, and the vision called <span class="gold">ACMDeGreat</span>.</p>
+      <p>Take a moment to be proud of how far you have come. You may not have everything you dream of yet, but your story is still being written. Every skill you learn, every problem you solve, every time you begin again — it all counts.</p>
+      <p>Keep building. Keep learning. Keep creating things that make life better. Let your ambition be matched by patience, discipline, kindness, and action. You do not need to have the whole future figured out today. You only need courage for the next step.</p>
+      <p>May this new year bring you wisdom, peace, good health, meaningful friendships, open doors, and the strength to turn your ideas into something real.</p>
+      <p class="gold">Dream boldly. Build patiently. Create with purpose. Make an impact.</p>
+      <p>With respect and belief in the journey,<br><strong>— ACMDeGreat 👑</strong></p>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2 class="section-title">My next chapter</h2>
+    <p class="center">A birthday is not only a celebration of age. It is a fresh chance to choose who I am becoming.</p>
+    <div class="grid">
+      <div class="tile"><div class="emoji">💡</div><h3>Keep learning</h3><p>Turn curiosity into useful skills and knowledge.</p></div>
+      <div class="tile"><div class="emoji">🏗️</div><h3>Build the vision</h3><p>Grow ACMDeGreat one real step at a time.</p></div>
+      <div class="tile"><div class="emoji">🚀</div><h3>Take action</h3><p>Start small, stay consistent, improve every day.</p></div>
+      <div class="tile"><div class="emoji">🤝</div><h3>Create impact</h3><p>Build things that help people and make life better.</p></div>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2 class="section-title">A promise to myself</h2>
+    <div class="card">
+      <div class="promise"><span class="check">✦</span><span>I will not despise small beginnings.</span></div>
+      <div class="promise"><span class="check">✦</span><span>I will protect my dreams with consistent effort.</span></div>
+      <div class="promise"><span class="check">✦</span><span>I will learn from mistakes instead of giving up.</span></div>
+      <div class="promise"><span class="check">✦</span><span>I will celebrate progress and remain humble.</span></div>
+      <div class="promise"><span class="check">✦</span><span>I will use what I learn to create value for others.</span></div>
+    </div>
+  </section>
+
+  <section class="content" style="text-align:center">
+    <button class="btn" id="giftBtn">🎁 Open my birthday surprise</button>
+    <div id="giftReveal" class="card hidden" style="text-align:center">
+      <div style="font-size:3rem">👑</div>
+      <h2>This is your reminder, ACMDeGreat.</h2>
+      <p>You are allowed to start small. You are allowed to learn as you go. Your future is not built in one birthday — it is built by what you choose to do after today.</p>
+      <p class="gold">ONE LIFE. ONE VISION. KEEP BUILDING.</p>
+      <button class="btn secondary" id="againBtn">Celebrate again ✨</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="font-size:1.5rem;color:#f6c65b">♛</div>
+  <p><strong>ACMDeGreat</strong><br>Building Ideas That Make Life Better.</p>
+  <p>Another year. A bigger vision. — October 28, 2026</p>
+</footer>
+</div>
+<script>
+const canvas=document.getElementById('confetti'),ctx=canvas.getContext('2d');
+let pieces=[],running=false,raf;
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+addEventListener('resize',resize);resize();
+function celebrate(){
+  pieces=Array.from({length:150},()=>({x:Math.random()*innerWidth,y:-Math.random()*innerHeight*.7,w:4+Math.random()*5,h:7+Math.random()*8,v:2+Math.random()*4,a:Math.random()*Math.PI,spin:(Math.random()-.5)*.15,life:150+Math.random()*100}));
+  if(!running){running=true;draw()}
+}
+function draw(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  pieces.forEach(p=>{p.y+=p.v;p.x+=Math.sin(p.y/30);p.a+=p.spin;p.life--;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.fillStyle=['#f6c65b','#fff0b0','#ffffff','#c58a25'][Math.floor(Math.random()*4)];ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore()});
+  pieces=pieces.filter(p=>p.y<innerHeight+20&&p.life>0);
+  if(pieces.length){raf=requestAnimationFrame(draw)}else{running=false;ctx.clearRect(0,0,innerWidth,innerHeight)}
+}
+document.getElementById('celebrateBtn').addEventListener('click',celebrate);
+document.getElementById('againBtn').addEventListener('click',celebrate);
+document.getElementById('giftBtn').addEventListener('click',()=>{
+  document.getElementById('giftReveal').classList.remove('hidden');
+  document.getElementById('giftReveal').scrollIntoView({behavior:'smooth',block:'center'});
+  celebrate();
+});
+</script>
+</body>
+</html>
